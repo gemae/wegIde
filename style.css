@@ -1,0 +1,342 @@
+
+		html{
+			--font-black: rgb(31, 31, 31);
+		}
+       
+		*{
+			padding: 0;
+			margin: 0;
+			font-family: 'Bellota';
+
+		}
+		.welcome-header{
+			background-color: #0d0c0c;
+			width: 100vw;
+			height: 100vh;
+			animation: fadeOut 2s;
+			animation-fill-mode: forwards;
+			animation-delay: 3s;
+			animation-timing-function: ease-out;
+		}
+		.container{
+			
+			text-transform: uppercase;
+			position: absolute;
+			z-index: 1;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			text-align: center;
+			font-weight: 400;
+		}
+		.text1{
+            width: fit-content;
+			color: #f7f2f2;
+			font-size: 3rem;
+			letter-spacing: 1rem;
+			animation: text 1900ms linear;
+			position: relative;
+			animation-fill-mode: forwards;
+		}
+		.text2{
+			color:  #0d0c0c;
+			font-size: 1.5rem;
+			transition: 1s;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			animation: second 2s linear;
+			animation-delay: 500ms;
+			animation-fill-mode: forwards;
+			z-index: -2;
+
+		}
+
+		@keyframes text{
+			10%{
+				letter-spacing: 1.5rem;
+				transform: scale(1.1);
+			}20%{letter-spacing: 1.7rem;}30%{letter-spacing: 1.8rem;}50%{letter-spacing: 1.5rem;}100%{letter-spacing:.8rem;}
+		}
+		@keyframes second{
+			20%{color: white;top: 140%;}30%{top: 150%;}40%{top: 120%;}50%{top: 150%;}60%{top: 120%;}70%{top: 150%;}80%{top: 130%;}85%{top: 150%;}90%{top: 140%;}95%{top: 145%;}100%{color: white;top: 140%;}
+		}
+		@keyframes fadeOut{
+			from{opacity: 1;}
+			to{opacity: 0;}
+		}
+		
+		.home-container{
+			width: 100vw;
+			height: 100vh;
+			background-color: linear-gradient(135deg,black,white);
+			position:absolute;
+			top: 0;
+			z-index: 1;
+            opacity: 0;
+            animation: show 1s;
+            animation-fill-mode: forwards;
+            display: none;
+		}
+        @keyframes show{
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+		.nav-bar{
+            width: 100vw;
+			height: 5rem;
+			display: flex;
+			justify-content: space-between;
+			padding: 0px 5rem;
+			align-items: center;
+            position: fixed;
+            box-sizing: border-box;
+            z-index: 2;
+
+		}
+		.nav-bar .logo{
+			font-size: 2rem;
+			text-decoration: none;
+			text-transform: uppercase;
+			display: flex;
+			align-items: center;
+			color: var(--font-black);
+			font-weight: bolder;
+
+		}
+		.nav-bar ul{
+			list-style:none;
+			height: fit-content;
+			color: var(--font-black);
+		}
+		.nav-bar li{
+			display: inline;
+			margin: 0px .5rem;
+
+		}
+		.nav-bar ul li a{
+			text-decoration: none;
+            cursor: pointer;
+            transition: .5s;
+            color: var(--font-black);
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            padding: .1rem .5rem;
+            font-weight: 700;
+		}
+
+        .nav-bar ul li a:hover{
+            background-image: linear-gradient(to right,var(--font-black),#616161);
+             transition: .2s;
+             color: white;
+            
+        }
+.get-started-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    position: relative;
+} 
+.get-started-container .start-header{
+
+     animation: textslidecont 1s;
+     opacity: 0;
+    animation-fill-mode: forwards;
+
+}
+
+.get-started-container header h1{
+    cursor: pointer;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    letter-spacing: 10rem;
+    animation: textslideTwo 2s;
+    animation-fill-mode: forwards;
+    
+}
+
+.get-started-container header .p1{
+    font-size: 2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: textslideOne 2s;
+    animation-fill-mode: forwards;
+}
+.get-started-container header .p2{
+    font-size: 1rem;
+    opacity: .7;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: textslideThree 2s;
+    animation-fill-mode: forwards;
+}
+.get-started-container header h1::after{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: .3rem;
+    bottom: .3rem;
+    left: .5rem;
+    opacity: 0;
+    animation: line 1500ms ease-out; 
+    animation-delay: 2100ms;
+    animation-fill-mode: forwards;
+    background-color: var(--font-black); 
+}
+/*Keyframes for homeheader*/
+@keyframes textslidecont{0%{transform: translateX(0%);opacity: .6;}100%{transform: translateX(-40%);opacity: 1;}}
+@keyframes textslideTwo{0%{width:0ch;overflow: hidden; letter-spacing: 9rem;}100%{width: 11ch;letter-spacing: 0;}}
+@keyframes textslideOne{0%{width:0ch;overflow: hidden; letter-spacing: 9rem;  }100%{width: 10ch;letter-spacing: 0;}}
+@keyframes textslideThree{0%{width:0ch; overflow: hidden; letter-spacing: 9rem;  }100%{width: 36ch;letter-spacing: 0;}}
+@keyframes line{0%{ opacity: 1;width: 1%;}50%{width: 70%; }100%{opacity: 1;width: 40%;}}
+.start-btn{
+    outline: none;
+    background:none;
+    border:2px solid var(--font-black);
+    padding: .5rem 2.5rem;
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: left; 
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    cursor: pointer;
+}
+.start-btn::after{
+    content: ' \00BB';
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    transform: translate(20%,-50%);
+}
+.start-btn:hover::after{
+    animation: button 1s ease-in;
+    animation-iteration-count: infinite;
+    transition: 1s;
+}
+/*Button animation*/
+@keyframes button{
+    0%{transform: translate(30%,-50%);}40%{transform: translate(40%,-50%);}70%{transform: translate(50%,-50%);}100%{transform: translate(20%,-50%);}}
+
+/*RESPONSIVENESS*/
+@media screen and (max-width: 1200px){
+/*Header*/
+.get-started-container{
+    justify-content: space-between;
+}
+.start-header{
+    transform: translate(0);
+   position: absolute;
+   left: 30%;
+
+   transition: .5s;
+}
+}
+
+@media screen and (max-width: 1000px){
+/*Header*/
+:root{
+    font-size: 90%;
+}
+.get-started-container{
+    justify-content: center;
+}
+.start-header{
+   left: 40%;
+   transition: .5s;
+
+}
+.start-btn{
+    bottom: 35%;
+}
+}
+
+@media screen and (max-width: 700px){
+    /*Welcome*/
+    .text1{
+            
+            font-size: 1rem;
+           
+        }
+        .text2{
+          
+            font-size: 1rem;
+        }
+
+/*NavBar*/
+.nav-bar{
+    padding: 0 1rem;
+}
+.nav-bar li{
+            margin: 0;
+        }
+
+/*Header*/
+
+.get-started-container header h1{
+    font-size: 3.5rem;
+    transition: .2s;
+}
+.get-started-container header h1::after{
+    height: .2rem;
+}
+.get-started-container header .p1{
+    font-size: 1.5rem;
+    transition: .2s;
+}
+.get-started-container header .p2{
+    font-size: .8rem;
+    transition: .2s;
+}
+.start-btn{
+    padding: .3rem 1.8rem;
+
+}
+.start-btn::after{
+    font-size: 20px;
+}
+}
+
+@media screen and (max-width: 400px){
+    /*Nav*/
+    .nav-bar li{
+           
+            margin: 0;
+
+        }
+        .nav-bar ul li a{
+            padding: .1rem .2rem;
+          
+        }
+
+.get-started-container header h1{
+    font-size: 2.5rem;
+    transition: .2s;
+}
+.get-started-container header h1::after{
+    height: .1rem;
+}
+.get-started-container header .p1{
+    font-size: 1rem;
+    transition: .2s;
+}
+.get-started-container header .p2{
+    font-size: .7rem;
+    transition: .2s;
+}
+}
