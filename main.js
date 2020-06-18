@@ -82,10 +82,12 @@ function small(){
     popModal();
     gallery(courouselImagesBox2,size2,courouselMain2);
 }
+
 //GALLERY POP
 function popModal(){
      html.style.overflow = "hidden";
 }
+
 //GALLERY 
 function gallery(courouselImagesBox,size,courouselMain){
 //buttons

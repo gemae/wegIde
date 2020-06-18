@@ -215,16 +215,17 @@
 .start-btn{
     outline: none;
     background:none;
-    border:2px solid var(--font-black);
     padding: .5rem 2.5rem;
     font-size: 1.5rem;
     position: absolute;
     bottom: 20%;
     left: 50%;
+    border: none;
     transform: translateX(-50%);
-    text-align: left; 
+  /*  text-align: left; 
+    border:2px solid var(--font-black);
     border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-bottom-right-radius: 30px;*/
     cursor: pointer;
 }
 .start-btn::after{
@@ -242,16 +243,106 @@
 #tabContainer section{
     width: 100%;
     height: 100vh; 
-    
+    box-sizing: border-box;
+    overflow: hidden;
 }
 #tabContainer .about{
     width: 100%;
     height: 100vh;
     display: none;
 }
-#tabContainer .contact-us{
-    background-color: pink;
+#tabContainer .contact{
+
     display: none;
+    width: 100%;
+    height: 100vh;
+    padding-top: 7rem;
+    box-sizing: border-box;
+}
+/*CONTACT*/
+.contact .suggest-cont{
+   
+    width: 40%;
+    padding: 2rem;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+
+}
+.suggest-cont div{
+    margin: .5rem;
+}
+.suggest-cont p{
+    max-width: 25rem;
+    text-align: left;
+    margin: 0 auto;
+    padding: 1rem;
+}
+.stars-cont i{
+    font-size: 1.5rem;
+    color: rgb(250, 247, 49);
+}
+.suggest-cont form{
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    display: inline-block;
+}
+.suggest-cont textarea{
+    padding: .5rem;
+    box-sizing: border-box;
+    text-align: left;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    min-width: 100%;
+}
+.suggest-cont .btn{
+    padding: .5rem 1rem;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    outline: none;
+    border: none;
+    color: white;
+    background-image: linear-gradient(to right,#333333,#969696,#333333);
+    background-size: 200%;
+    transition: .5s;
+}
+.suggest-cont .btn:hover{
+    transition: .5s;
+    background-position:right;
+}
+.social-cont{
+    border-top:1px solid #f5f5f5;
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+.social-btn{
+    display: inline-block;
+}
+.social-cont h4{
+    text-align:center;
+    padding: 2rem 0;
+    text-transform: uppercase;
+}
+.social-btn a{
+    text-decoration: none;
+    padding: 0 3rem;
+}
+.social-btn i{
+    font-size: 2rem;
+   
+    transition: .5s;
+}
+.social-btn a:hover i{
+    transform: translateY(10px);
+    transition: .5s;
 }
 /*ABOUT*/
 .about article{
@@ -264,30 +355,30 @@
     background-color: rgba(248, 248, 248, 0.678);
     box-shadow: 2px 2px 5px gray;
     width: 80%;
-    height: 60%;
+    min-height: 60vh;
     text-align: center;
-    padding: 5rem;
+    padding:3rem 5rem;
     box-sizing: border-box;
 }
 .about article h2{
     text-transform: uppercase;
+    position: relative;
+    margin-bottom: 1rem;
    
 }
 .about article p{
     position: relative;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+
 }
 /*IDEAS CONTAINER*/
 .ideas-section{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     text-align: center;
     position: relative;
    box-sizing: border-box;
    display: none;
-   padding-bottom: 3rem;
+
 }
 .ideas-section > h3{
     padding-top: 7rem;
@@ -303,7 +394,7 @@
     position: relative;
 }
 .ideas-container{
-    margin-top: 5rem    ;
+    margin-top: 5rem;
     display: flex;
     justify-content: space-evenly;
     position: relative;
@@ -345,7 +436,7 @@ figure .ribbon-in-figure{
 figure:hover .ribbon-in-figure{
     animation: ribbon .2s ease-out;
     animation-fill-mode: forwards;
-}
+}/*
 figure:hover .ribbon-in-figure::after{
     animation: ribboncaption .1s;
     animation-delay: 100ms;
@@ -413,7 +504,7 @@ figure:hover .ribbon-in-figure::after{
     box-sizing: border-box;
 }
 .gallery-small-cont .general{
-    height: 80%;
+    height: 70%;
     max-width: 100%;
     position: relative;
     box-sizing: border-box;
@@ -487,8 +578,11 @@ figure a img{
 width: 100%;
 height: 100%;
 border-top-right-radius: 20px;
-box-shadow: 1px 1px 5px rgb(31, 31, 31);
+
 cursor: pointer;
+}
+figure a img:hover{
+    box-shadow: 1px 1px 5px rgb(31, 31, 31);
 }
 
 /*Button animation*/
@@ -520,7 +614,7 @@ cursor: pointer;
 }
 /*Header*/
 .get-started-container .start-header{
-    left: -10%;
+    left: -5%;
 }
 
 .start-btn{
@@ -533,29 +627,17 @@ figure:hover .ribbon-in-figure::after{
 }
 
 @media screen and (max-width: 800px){
+/*TABS*/
+#tabContainer section{
+
+    overflow: visible;
+}
+/*SUGGEST CONT*/
+.contact .suggest-cont{
+    width: 80%;
+}
 /*IDEAS*/
-.ideas-container{
-     display: flex;
-    justify-content: space-around;
-     position: relative;   
-}
-figure:hover .ribbon-in-figure::after{
-    animation:none;
-}
-
-.ideas-section h3{
-    padding-top: 8rem;
-}
-
-.ideas-container > figure{  
-         max-width: 18rem;
-     height: 18rem;
-    position: relative;     
- }
-/*HEADER*/
-
-          /*IDEAS*/
-  .ideas-section p{
+.ideas-section p{
     font-size: .9rem;
     margin-bottom: 1rem;
 }
@@ -569,6 +651,22 @@ figure:hover .ribbon-in-figure::after{
 .ideas-container > figure:nth-child(2){
   margin-top: 3rem;
 }
+figure:hover .ribbon-in-figure::after{
+    animation:none;
+}
+
+.ideas-section h3{
+    padding-top: 8rem;
+}
+
+.ideas-container > figure{  
+         width: 18rem;
+     height: 18rem;
+    position: relative;     
+ }
+/*HEADER*/
+
+  
     }
 @media screen and (max-width: 700px){
 
@@ -615,6 +713,42 @@ figure:hover .ribbon-in-figure::after{
 
 }
 @media screen and (max-width: 650px){
+
+/*SUGGEST CONT*/
+.contact .suggest-cont p{
+    text-align: center;
+}
+/*START HEADER*/
+
+.get-started-container header h1{
+    font-size: 3.5rem;
+    transition: .2s;
+}
+.get-started-container header h1::after{
+    height: .1rem;
+}
+.get-started-container header .p1{
+    font-size: 1rem;
+    transition: .2s;
+}
+.get-started-container header .p2{
+    font-size: .7rem;
+    transition: .2s;
+}
+
+/*ANIMATION*/
+@keyframes textslidecont{0%{opacity: .6;}100%{opacity: 1;}}
+@keyframes textslideTwo{0%{max-width:0ch;overflow: hidden; letter-spacing: 9rem;}100%{max-width: 12ch;letter-spacing: 0;}}
+@keyframes textslideOne{0%{max-width:0ch;overflow: hidden; letter-spacing: 9rem;  }100%{max-width: 10ch;letter-spacing: 0;}}
+@keyframes textslideThree{0%{max-width:0ch; overflow: hidden; letter-spacing: 9rem;  }100%{max-width: 30ch;letter-spacing: 0;}}
+@keyframes line{0%{ opacity: 1;width: 1%;}50%{width: 70%; }100%{opacity: 1;width: 40%;}}
+
+/*ABOUT*/
+
+.about article{
+    padding: 3rem 1rem;
+    width: 90%;
+}
     .get-started-container .start-header{
         left: 0%;
     }
@@ -637,6 +771,29 @@ figure:hover .ribbon-in-figure::after{
     width: 17rem;
     height: 18rem;
 }
+
+/*START HEADER*/
+
+.get-started-container header h1{
+    font-size: 2rem;
+    transition: .2s;
+}
+.get-started-container header h1::after{
+    height: .1rem;
+}
+.get-started-container header .p1{
+    font-size: .8rem;
+    transition: .2s;
+}
+.get-started-container header .p2{
+    font-size: .6rem;
+    transition: .2s;
+}
+/*CONTACT*/
+.social-btn a{
+   
+    padding: 0 1rem;
+}
 }
 @media screen and (max-width: 400px){
 
@@ -654,32 +811,22 @@ figure:hover .ribbon-in-figure::after{
   .ideas-container{
       margin-top: 2rem;
   }
+  .ideas-container{
+    
+      padding: 0;
+      margin: 0;
+  }
 .ideas-container > figure{  
-    width: 85%;
-    height: 18rem;
+    width: 70%;
+    height: 15rem;
     position: relative;
+    box-sizing: border-box;
+    padding: 0;
     
 }
 figure:hover .ribbon-in-figure::after{
     animation:none;
-}
-/*START HEADER*/
-
-.get-started-container header h1{
-    font-size: 2.5rem;
-    transition: .2s;
-}
-.get-started-container header h1::after{
-    height: .1rem;
-}
-.get-started-container header .p1{
-    font-size: .8rem;
-    transition: .2s;
-}
-.get-started-container header .p2{
-    font-size: .6rem;
-    transition: .2s;
-}
+}   
 /*GALLERY*/
 .gallery-small-cont{
     width: 13rem;
