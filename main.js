@@ -1,25 +1,58 @@
 //WELCOME//
-function homePop(){
+/*function homePop(){
     var welcome = document.querySelector("header");
     welcome.style.display = "none";
     pop();
 }
     setTimeout(homePop, 6000);	
-var homestyle = document.querySelector(".home-container");
+
 function pop(){
     homestyle.style.display = "block";
-}
+}*/
+//HOME
+const homestyle = document.querySelector(".home-container");
 var ideasSection = document.querySelector(".ideas-section");
 function home(){
-    homestyle.style.display = "none";
-    ideasSection.style.display = "block";
+    showTab(0);
 }
+
+//SHOW TABS
+//links
+const navList = document.getElementById("navList");
+const navLink = navList.querySelectorAll("li");
+
+//tabs
+const tab = document.querySelectorAll("#tabContainer .tab");
+console.log(tab);
+
+
+function showTab(tabNum){
+    let current = document.getElementsByClassName("active");
+    tab.forEach((me) =>  {
+        me.style.display = "none";
+    });
+    navLink.forEach((me)=>{
+        if(current.length > 0){
+            me.className = me.className.replace("active", "");
+        }
+    });
+
+    homestyle.style.display = "none";
+    tab[tabNum].style.display = "block";
+    navLink[tabNum].classList.add("active");
+}
+
+//NAV LINK SET ACTIVE
+
+
 //CLOSE GALLERY
+const html = document.querySelector("html");
 const closes = document.querySelector(".close");
 const gallerySection = document.querySelector(".gallery-section");
 gallerySection.style.display = "none";
 closes.addEventListener("click",()=>{
 gallerySection.style.display = "none";
+html.style.overflow = "visible";
 });
 
 //TWO GALLERY
@@ -34,6 +67,7 @@ function general(){
     var size1 = courouselImagesBox1[0].offsetWidth;
     mainOne.style.visibility = "visible"
     mainTwo.style.visibility = "hidden"
+    popModal();
     gallery(courouselImagesBox1,size1,courouselMain1);
    // mainTwo.style.display = "none";
 }
@@ -45,12 +79,15 @@ function small(){
     var size2 = courouselImagesBox2[0].offsetWidth;
     mainTwo.style.visibility = "visible"
     mainOne.style.visibility = "hidden"
+    popModal();
     gallery(courouselImagesBox2,size2,courouselMain2);
 }
-
+//GALLERY POP
+function popModal(){
+     html.style.overflow = "hidden";
+}
+//GALLERY 
 function gallery(courouselImagesBox,size,courouselMain){
-
-
 //buttons
 let prevBtn = document.querySelector(".prev-btn");
 let nextBtn = document.querySelector(".next-btn");

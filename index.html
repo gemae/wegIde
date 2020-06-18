@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	
+	<!--
 <header class="welcome-header">
 		<div class="container">
 		<div class="text1">Welcome to</div>
@@ -18,54 +18,75 @@
 	</div>
 	</header>
 
+	-->
+
 	
 	<nav class="nav-bar">
 		<a href="#"class="logo">Logo</a>
-		<ul class="nav-list"> 
-			<li><a href="#">Home</a></li>
-			<li><a href="#">Ideas</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Contact Us</a></li>
+		<ul class="nav-list" id="navList"> 
+			<li onclick="showTab(0);">Home</li>
+			<li onclick="showTab(1);">About</li>
+			<li onclick="showTab(2);">Contact Us</li>
 		</ul>
 	</nav>
+
 	<div class="home-container">
 	
 		<main class="get-started-container">
 			<header class="start-header"> 
-				<p class="p1">Path to your..</p>
+				<p class="p1">Way to your..</p>
 				<h1>Lovely Home!</h1>
 				<p class="p2">we wil give you ideas for a "Perfect Interior Designs"</p>
 			</header>
 			<button class="start-btn" type="button" onclick="home();">Ideas</button>
 		</main>
 	</div>
-	<section class="ideas-section">
-		<h3>Designers share the decorating secrets only professionals know..Until Now</h3>
-		<p>We've compiled some secrets straight from the pros to help you with all you decorating needs.</p>
-	
-		<section class="ideas-container">
-			<figure class="general-ideas" onclick="general();">
-				<div class="ribbon-in-figure"></div>
-				<a href="#">
-					<img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/painted-ceilings-hbx090119paint-014-1580335907.jpg?crop=1.00xw:0.834xh;0,0.111xh&resize=980:*">
-				</a>
-				<figcaption>
-					General Ideas from professionals
-				</figcaption>
-			</figure> 
 
-			<figure class="smallhouse-ideas" onclick="small();">
-				<div class="ribbon-in-figure"></div>
-				<a href="#">
-					<img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/painted-ceilings-hbx090119paint-014-1580335907.jpg?crop=1.00xw:0.834xh;0,0.111xh&resize=980:*">
-				</a>
-				<figcaption>
-					General Ideas from professionals
-				</figcaption>
-			</figure>
-		</section>
+	<!--TAB CONTAINER-->
+	<div id="tabContainer">
+		<section class="ideas-section tab">
+			<h3>Designers share the decorating secrets only professionals know..Until Now</h3>
+			<p>We've compiled some secrets straight from the pros to help you with all you decorating needs.</p>
 		
-	</section>
+			<section class="ideas-container">
+				<figure class="general-ideas" onclick="general();">
+					<div class="ribbon-in-figure"></div>
+					<a href="#">
+						<img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/painted-ceilings-hbx090119paint-014-1580335907.jpg?crop=1.00xw:0.834xh;0,0.111xh&resize=980:*">
+					</a>
+					<figcaption>
+						General Ideas from professionals
+					</figcaption>
+				</figure> 
+	
+				<figure class="smallhouse-ideas" onclick="small();">
+					<div class="ribbon-in-figure"></div>
+					<a href="#">
+						<img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/painted-ceilings-hbx090119paint-014-1580335907.jpg?crop=1.00xw:0.834xh;0,0.111xh&resize=980:*">
+					</a>
+					<figcaption>
+						General Ideas from professionals
+					</figcaption>
+				</figure>
+			</section>
+		</section>
+			<section class="about tab">
+				<article>
+					<h2>About</h2>
+					<p>
+						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet et minima quidem exercitationem sed nisi qui doloribus nulla beatae amet. Porro quibusdam harum adipisci sed qui ipsam nemo alias autem?
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, voluptate officiis? Dolores ullam aspernatur error dolore impedit assumenda quidem alias. Sequi quas in voluptatem ad saepe nisi dicta distinctio voluptatibus.
+					</p>
+				</article>		
+			</section>
+			
+			<section class="contact-us tab">
+
+			</section>
+	</div>
+	
+		
+
 	<!--Gallery Section-->
 	<section class="gallery-section">
 		<div class="gallery-container">
