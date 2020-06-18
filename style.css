@@ -83,7 +83,7 @@
             opacity: 0;
             animation: show 1s;
             animation-fill-mode: forwards;
-            
+            display: none;
 		}
         @keyframes show{
             from{

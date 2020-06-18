@@ -1,5 +1,5 @@
 //WELCOME//
-/*function homePop(){
+function homePop(){
     var welcome = document.querySelector("header");
     welcome.style.display = "none";
     pop();
@@ -8,7 +8,8 @@
 
 function pop(){
     homestyle.style.display = "block";
-}*/
+}
+
 //HOME
 const homestyle = document.querySelector(".home-container");
 var ideasSection = document.querySelector(".ideas-section");
