@@ -42,9 +42,7 @@ function showTab(tabNum){
     tab[tabNum].style.display = "block";
     navLink[tabNum].classList.add("active");
 }
-
 //NAV LINK SET ACTIVE
-
 
 //CLOSE GALLERY
 const html = document.querySelector("html");
