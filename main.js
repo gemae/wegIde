@@ -1,5 +1,9 @@
 //WELCOME//
 function homePop(){
+    var html = document.querySelector("html");
+    var body = document.querySelector("body");
+    html.style.overflow = "visible";
+    body.style.overflow = "visible";
     var welcome = document.querySelector("header");
     welcome.style.display = "none";
     pop();
