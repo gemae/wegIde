@@ -6,6 +6,7 @@ html{
           
     width: 100%;
     min-width: 250px;
+    height: fit-content;
     position: relative;
     box-sizing: border-box;
     overflow: hidden;
@@ -111,15 +112,18 @@ html{
 	display: inline;
 	margin: 0px .5rem;
     cursor: pointer;
-    transition: .5s;
     padding: .1rem .5rem;
     font-weight: 700;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-}
-.nav-bar ul li{
     transition: .2s;
+    animation: fadeLink 1000ms;
+    animation-delay: 6800ms;
+    animation-fill-mode: forwards;
+    opacity: 0;
 }
+@keyframes fadeLink{from{ opacity: 0;}to{opacity: 1;}}
+
 .active{
     background-image: linear-gradient(to right,var(--font-black),#616161);
     color: white;
@@ -141,6 +145,7 @@ html{
     animation-fill-mode: forwards;
     position: relative;
     left: -20%;
+    height: fit-content;
 }
 
 .get-started-container header h1{
@@ -163,13 +168,14 @@ html{
     overflow: hidden;
     animation: textslideOne 2s;
     animation-fill-mode: forwards;
+
 }
 .get-started-container header .p2{
     font-size: 1rem;
     opacity: .7;
     white-space: nowrap;
     overflow: hidden;
-    line-height: 1rem;
+    letter-spacing: .5rem;
     animation: textslideThree 2s;
     animation-fill-mode: forwards;
 }
@@ -179,7 +185,7 @@ html{
     display: block;
     width: 0;
     height: .3rem;
-    bottom: .3rem;
+    bottom: 2rem;
     left: .5rem;
     opacity: 0;
     animation: line 1500ms ease-out; 
@@ -226,30 +232,34 @@ html{
     width: 100%;
     height: 100vh;
     box-sizing: border-box;
-    overflow: hidden;
+    padding-top: 7rem;
+   
 }
 #tabContainer .about{
     width: 100%;
     height: 100vh;
     display: none;
+    
 }
 #tabContainer .contact{
-
     display: none;
-    width: 100%;
-    
-    padding-top: 7rem;
+    width: 100%; 
     box-sizing: border-box;
 }
 /*CONTACT*/
 .contact .suggest-cont{
-   
     width: 40%;
     position: relative;
     margin: 0 auto;
     text-align: center;
     box-sizing: border-box;
-    height: 100%;
+}
+.social-cont{
+    border-top:1px solid #f5f5f5;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    padding: 2rem 0;
 }
 .suggest-cont div{
     margin: .5rem;
@@ -261,7 +271,26 @@ html{
     padding: 1rem;
 }
 .stars-cont i{
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    
+}
+.stars-cont .fa{
+    color:rgb(54, 54, 54);
+    border: rgb(54, 54, 54);
+}
+.stars-cont s1:hover{
+   color: rgb(250, 247, 49);
+}
+.stars-cont s2:hover s1,.stars-cont s2{
+    color: rgb(250, 247, 49);
+}
+.stars-cont s3:hover s1,.stars-cont s2,.stars-cont s3{
+    color: rgb(250, 247, 49);
+}
+.stars-cont s4:hover s1,.stars-cont s2,.stars-cont s3,.stars-cont s4{
+    color: rgb(250, 247, 49);
+}
+.stars-cont s5:hover s1,.stars-cont s2,.stars-cont s3,.stars-cont s4,.stars-cont s5{
     color: rgb(250, 247, 49);
 }
 .suggest-cont form{
@@ -269,6 +298,7 @@ html{
     width: 100%;
     box-sizing: border-box;
     display: inline-block;
+    padding: 1rem 0;
 }
 .suggest-cont textarea{
     padding: .5rem;
@@ -279,6 +309,7 @@ html{
     overflow: hidden;
     margin-bottom: 1rem;    
     min-width: 100%;
+
 }
 .suggest-cont .btn{
     padding: .5rem 1rem;
@@ -299,14 +330,7 @@ html{
     transition: .5s;
     background-position:right;
 }
-.social-cont{
-    border-top:1px solid #f5f5f5;
-    width: 100%;
-    position: relative;
-    text-align: center;
-    padding: 2rem 0;
 
-}
 .social-btn{
     display: inline-block;
 }
@@ -322,8 +346,22 @@ html{
 }
 .social-btn i{
     font-size: 2rem;
-   
     transition: .5s;
+}
+.social-btn .fa-twitter{
+    color: cornflowerblue;
+}
+.social-btn .fa-google{
+    color: rgb(231, 108, 91);
+}
+.social-btn .fa-github{
+    color: rgb(181, 221, 87);
+}
+.social-btn .fa-facebook{
+    color: rgb(36, 58, 255);
+}
+.social-btn .fa-instagram{
+    color: rgb(180, 54, 54);
 }
 .social-btn a:hover i{
     transform: translateY(10px);
@@ -332,7 +370,7 @@ html{
 /*ABOUT*/
 .about article{
     font-size: 1rem;
-    color: rgb(141, 137, 137);
+   
     position: relative;
     top:50%;
     left: 50%;
@@ -342,17 +380,19 @@ html{
     width: 80%;
     min-height: 60vh;
     text-align: center;
-    padding:3rem 5rem;
+    padding:0px 5rem;
     box-sizing: border-box;
 }
 .about article h2{
     text-transform: uppercase;
     position: relative;
     margin-bottom: 1rem;
+    color: var(--font-black);
    
 }
 .about article p{
     position: relative;
+    color: rgb(141, 137, 137);
 
 }
 /*IDEAS CONTAINER*/
@@ -366,31 +406,33 @@ html{
 
 }
 .ideas-section > h3{
-    padding-top: 7rem;
     text-transform: uppercase;
-    padding-left:2rem;
-    padding-right:2rem;
+    padding-left:1rem;
+    padding-right:1rem;
     position: relative;
 }
 .ideas-section > p{
-    padding-top: 1rem;
-    padding-left:3rem;
-    padding-right:3rem;
+    padding-top: .7rem;
+    padding-left: 2rem;
+    padding-right:2rem;
+    opacity:.8;
     position: relative;
 }
 .ideas-container{
     display: flex;
     justify-content: space-evenly;
     position: relative;
-    margin-top: 5rem;
-   
+
 }
 .ideas-container > figure{  
     width: 20rem;
     height: 20rem;
     position: relative;
 }
-
+.figcaption{
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
 figure a{
     max-width: 100%;
     max-height: 100%;
@@ -464,9 +506,10 @@ figure:hover .ribbon-in-figure::after{
     bottom: 0;
     width:100vw;
     min-width:100%;
-    height: 100%;
+    height: 100vh;
     z-index: 3;
     display: none;
+    box-sizing: border-box;
 
 }
 .gallery-section .gallery-container{
@@ -585,9 +628,7 @@ figure a img:hover{
 
 @media screen and (max-width: 1024px){
 /*IDEAS*/
-.ideas-section h3{
-    padding-top: 15rem;
-}
+
 .ideas-container > figure{  
     width: 18rem;
      height: 18rem;
@@ -635,9 +676,7 @@ figure:hover .ribbon-in-figure::after{
 figure:hover .ribbon-in-figure::after{
     animation:none;
 }
-.ideas-section h3{
-    padding-top: 8rem;
-}
+
 .ideas-container > figure{    
     margin: 0 auto;  
  }
@@ -788,8 +827,10 @@ figure:hover .ribbon-in-figure::after{
     transition: .2s;
 }
 .get-started-container header h1::after{
-    height: .1rem;
+    height: .2rem;
+    bottom: .7rem;
 }
+
 .get-started-container header .p1{
     font-size: .8rem;
     transition: .2s;
@@ -814,12 +855,8 @@ figure:hover .ribbon-in-figure::after{
     padding: .1rem .2rem;          
 }
 /*IDEAS*/
-.ideas-container{
-      margin-top: 2rem;
-}
 .ideas-container{    
       padding: 0;
-      margin: 0;
       box-sizing: border-box;
 }
 .ideas-container > figure{  
