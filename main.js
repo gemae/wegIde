@@ -46,6 +46,19 @@ function showTab(tabNum){
     tab[tabNum].style.display = "block";
     navLink[tabNum].classList.add("active");
 }
+
+//STAR HOVER
+function hover(star){
+    const starSet = document.querySelectorAll(".stars-cont i");
+    starSet.forEach((me) => {
+        me.style.color = "whitesmoke";
+    });
+    
+    for(let i = 0; i <= star; i++){
+        starSet[i].style.color = "rgb(250, 247, 49)";
+    }
+}
+
 //NAV LINK SET ACTIVE
 
 //CLOSE GALLERY
