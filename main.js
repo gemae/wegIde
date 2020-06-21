@@ -1,7 +1,8 @@
 //WELCOME//
+const html = document.querySelector("html");
+const body = document.querySelector("body");
 function homePop(){
-    var html = document.querySelector("html");
-    var body = document.querySelector("body");
+    
     html.style.overflow = "visible";
     body.style.overflow = "visible";
     var welcome = document.querySelector("header");
@@ -17,20 +18,27 @@ function pop(){
 //HOME
 const homestyle = document.querySelector(".home-container");
 var ideasSection = document.querySelector(".ideas-section");
-function home(){
-    showTab(0);
+function home(cont){
+    var thisCont = document.querySelector(cont);
+    clicks(thisCont);
+    
 }
+
+//CONTAINER TRANSITION
+function clicks(thisCont){
+    thisCont.style.animation = "containerTrans 700ms ease-in"
+    thisCont.style.animationFillMode = "forwards"
+
+   setTimeout(showTab(0), 1000);	
+}
+
 
 //SHOW TABS
 //links
 const navList = document.getElementById("navList");
 const navLink = navList.querySelectorAll("li");
-
 //tabs
 const tab = document.querySelectorAll("#tabContainer .tab");
-console.log(tab);
-
-
 function showTab(tabNum){
     let current = document.getElementsByClassName("active");
     tab.forEach((me) =>  {
@@ -41,9 +49,8 @@ function showTab(tabNum){
             me.className = me.className.replace("active", "");
         }
     });
-
-    homestyle.style.display = "none";
-    tab[tabNum].style.display = "block";
+    //homestyle.style.display = "none";
+   tab[tabNum].style.display = "block";
     navLink[tabNum].classList.add("active");
 }
 
@@ -58,8 +65,6 @@ function hover(star){
         starSet[i].style.color = "rgb(250, 247, 49)";
     }
 }
-
-//NAV LINK SET ACTIVE
 
 //CLOSE GALLERY
 const html = document.querySelector("html");
