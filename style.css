@@ -273,7 +273,7 @@ html{
 }
 
 /*TABS*/
-#tabContainer section{
+#tabContainer > section{
     width: 100%;
     height: 100vh;
     box-sizing: border-box;
@@ -465,6 +465,7 @@ html{
     text-transform: uppercase;
     padding-left:1rem;
     padding-right:1rem;
+    padding-top: 1rem;
     position: relative;
 }
 .ideas-section > p{
@@ -478,6 +479,7 @@ html{
     display: flex;
     justify-content: space-evenly;
     position: relative;
+    margin-top: 3rem;
 
 }
 .ideas-container > figure{  
@@ -891,8 +893,10 @@ figure:hover .ribbon-in-figure::after{animation:none;}
     transition: .2s;
 }
 /*CONTACT*/
+
 .social-btn a{
-   
+  
+    border-radius: 35%;
     padding: 0 1rem;
 }
 /*SUGGEST/SOCIAL BUTTON*/

@@ -1,6 +1,7 @@
 //WELCOME//
 const html = document.querySelector("html");
 const body = document.querySelector("body");
+const homestyle = document.querySelector(".home-container");
 function homePop(){
     
     html.style.overflow = "visible";
@@ -16,20 +17,21 @@ function pop(){
 }
 
 //HOME
-const homestyle = document.querySelector(".home-container");
+
 var ideasSection = document.querySelector(".ideas-section");
-function home(cont){
-    var thisCont = document.querySelector(cont);
-    clicks(thisCont);
+
+//function home(){
+  //  var thisCont = document.querySelector(".home-container");
+    //clicks(thisCont);
     
-}
+//}
 
 //CONTAINER TRANSITION
-function clicks(thisCont){
-    thisCont.style.animation = "containerTrans 700ms ease-in"
-    thisCont.style.animationFillMode = "forwards"
-
-   setTimeout(showTab(0), 1000);	
+function clicks(){
+    homestyle.style.animation = "containerTrans 700ms ease-in"
+    homestyle.style.animationFillMode = "forwards"
+   // showTab(0);
+    setTimeout(showTab(0), 1000);	
 }
 
 
@@ -37,6 +39,7 @@ function clicks(thisCont){
 //links
 const navList = document.getElementById("navList");
 const navLink = navList.querySelectorAll("li");
+var displayHome = homestyle.getAttribute("left");
 //tabs
 const tab = document.querySelectorAll("#tabContainer .tab");
 function showTab(tabNum){
@@ -49,9 +52,12 @@ function showTab(tabNum){
             me.className = me.className.replace("active", "");
         }
     });
-    //homestyle.style.display = "none";
+    homestyle.style.display = "none";
    tab[tabNum].style.display = "block";
     navLink[tabNum].classList.add("active");
+   // if(displayHome != "-100vw"){
+     //   clicks();
+    //}
 }
 
 //STAR HOVER
@@ -67,7 +73,6 @@ function hover(star){
 }
 
 //CLOSE GALLERY
-const html = document.querySelector("html");
 const closes = document.querySelector(".close");
 const gallerySection = document.querySelector(".gallery-section");
 gallerySection.style.display = "none";
