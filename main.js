@@ -27,11 +27,23 @@ var ideasSection = document.querySelector(".ideas-section");
 //}
 
 //CONTAINER TRANSITION
-function clicks(){
-    homestyle.style.animation = "containerTrans 700ms ease-in"
-    homestyle.style.animationFillMode = "forwards"
+function clicks(n){
+    if(n === 0){
+    homestyle.style.animation = "containerTrans 400ms ease-in";
+    homestyle.style.animationFillMode = "forwards";
    // showTab(0);
+   htmlHid();
+   setTimeout(htmlVis, 700);
     setTimeout(showTab(0), 1000);	
+    
+    }
+    else{
+    homestyle.style.animation = "containerTrans 400ms ease-in";
+    homestyle.style.animationFillMode = "forwards";
+    htmlHid();
+    setTimeout(htmlVis, 700);
+    }
+    
 }
 
 
@@ -39,7 +51,6 @@ function clicks(){
 //links
 const navList = document.getElementById("navList");
 const navLink = navList.querySelectorAll("li");
-var displayHome = homestyle.getAttribute("left");
 //tabs
 const tab = document.querySelectorAll("#tabContainer .tab");
 function showTab(tabNum){
@@ -52,11 +63,12 @@ function showTab(tabNum){
             me.className = me.className.replace("active", "");
         }
     });
-    homestyle.style.display = "none";
+  //  homestyle.style.display = "none";
    tab[tabNum].style.display = "block";
     navLink[tabNum].classList.add("active");
+    clicks(1);
    // if(displayHome != "-100vw"){
-     //   clicks();
+     //  
     //}
 }
 
@@ -77,8 +89,10 @@ const closes = document.querySelector(".close");
 const gallerySection = document.querySelector(".gallery-section");
 gallerySection.style.display = "none";
 closes.addEventListener("click",()=>{
-gallerySection.style.display = "none";
-html.style.overflow = "visible";
+gallerySection.style.animation = "fromTop 400ms ease-out";
+gallerySection.style.animationFillMode = "forwards";
+//gallerySection.style.display = "none";
+htmlVis();
 });
 
 //TWO GALLERY
@@ -88,30 +102,40 @@ let mainTwo = document.getElementById("mainTwo");
 //OPEN GENERAL GALLERY  
 function general(){
     gallerySection.style.display = "flex";
-    var courouselImagesBox1 = document.querySelectorAll("#mainOne .box");
-    var courouselMain1 = document.getElementById("mainOne");
-    var size1 = courouselImagesBox1[0].offsetWidth;
+    gallerySection.style.animation = "fromBottom 400ms ease-out";
+    gallerySection.style.animationFillMode = "forwards";
+    courouselImagesBox1 = document.querySelectorAll("#mainOne .box");
+    courouselMain1 = document.getElementById("mainOne");
+    size1 = courouselImagesBox1[0].offsetWidth;
     mainOne.style.visibility = "visible"
     mainTwo.style.visibility = "hidden"
-    popModal();
+    html.style.overflow = "hidden";
     gallery(courouselImagesBox1,size1,courouselMain1);
    // mainTwo.style.display = "none";
 }
 
 function small(){
     gallerySection.style.display = "flex";
-    var courouselImagesBox2 = document.querySelectorAll("#mainTwo .box");
-    var courouselMain2 = document.getElementById("mainTwo");
-    var size2 = courouselImagesBox2[0].offsetWidth;
+    gallerySection.style.animation = "fromBottom 400ms ease-out";
+    gallerySection.style.animationFillMode = "forwards";
+    courouselImagesBox2 = document.querySelectorAll("#mainTwo .box");
+    courouselMain2 = document.getElementById("mainTwo");
+    size2 = courouselImagesBox2[0].offsetWidth;
     mainTwo.style.visibility = "visible"
     mainOne.style.visibility = "hidden"
-    popModal();
+    html.style.overflow = "hidden";
     gallery(courouselImagesBox2,size2,courouselMain2);
 }
 
 //GALLERY POP
-function popModal(){
+function htmlHid(){
      html.style.overflow = "hidden";
+     body.style.overflow = "hidden";
+}
+//VISIBLE HTML
+function htmlVis(){
+    html.style.overflow = "visible";
+    body.style.overflow = "visible";
 }
 
 //GALLERY 
@@ -122,9 +146,6 @@ let nextBtn = document.querySelector(".next-btn");
 
 //counter
 let counter = 1;
-
-console.log(size);
-
 courouselMain.style.transform = "translateX(" + (-size * counter) + "px"; 
 
 nextBtn.addEventListener("click", ()=>{

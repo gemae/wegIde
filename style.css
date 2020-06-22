@@ -15,13 +15,14 @@ html{
 *{
 	padding: 0;
     margin: 0;
-    font-family: 'Bad Script',-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Red Hat Display',-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 
 .welcome-header{
-    background-color: #0d0c0c;
-	max-width: 100vw;
+    background-image: linear-gradient(135deg,#333333,#414141,#333333);
+    background-size: 200%;
+    max-width: 100vw;
 	height: 100vh;
 	animation: fadeOut 2s;
 	animation-fill-mode: forwards;
@@ -30,7 +31,7 @@ html{
     overflow: hidden;
 }
 .container{
-    text-transform: uppercase;
+  
     position: absolute;
     width: 100%;
 	z-index: 1;
@@ -43,7 +44,9 @@ html{
 }
 .text1{
         width: 100%;
-		color: #f7f2f2;
+        /*color: #f7f2f2;*/
+        text-transform: uppercase;
+        color: whitesmoke;
 		font-size: 3rem;
 		letter-spacing: 1rem;
 		animation: text 1900ms linear;
@@ -51,10 +54,11 @@ html{
 		animation-fill-mode: forwards;
 }
 .text2{
-	color:  #0d0c0c;
-	font-size: 1.5rem;
+	color: transparent;
+	font-size: 1.8rem;
 	transition: 1s;
     position: absolute;
+    letter-spacing: 1.5px;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
@@ -65,7 +69,7 @@ html{
 }
 
 @keyframes text{10%{letter-spacing: 1.5rem;transform: scale(1.1);}20%{letter-spacing: 1.7rem;}30%{letter-spacing: 1.8rem;}50%{letter-spacing: 1.5rem;}100%{letter-spacing:.8rem;}}
-@keyframes second{20%{color: white;top: 140%;}30%{top: 150%;}40%{top: 120%;}50%{top: 150%;}60%{top: 120%;}70%{top: 150%;}80%{top: 130%;}85%{top: 150%;}90%{top: 140%;}95%{top: 145%;}100%{color: white;top: 140%;}}
+@keyframes second{0%{color: transparent;}20%{color: whitesmoke;top: 140%;}30%{top: 150%;}40%{top: 120%;}50%{top: 150%;}60%{top: 120%;}70%{top: 150%;}80%{top: 130%;}85%{top: 150%;}90%{top: 140%;}95%{top: 145%;}100%{color: whitesmoke;top: 140%;}}
 @keyframes fadeOut{from{opacity: 1;}to{opacity: 0;}}	
         
 
@@ -86,14 +90,17 @@ html{
     border-bottom: 1px solid #f5f5f5;
 }
 .nav-bar .logo{
-	font-size: 2rem;
-	text-decoration: none;
-	text-transform: uppercase;
+	
 	display: flex;
 	align-items: center;
-    color:#333333;
-    font-weight: bolder;
+    width: 4rem;
+    height: 4rem;
     
+}
+.logo img{
+    border-radius: 50%;
+    width: 100%;
+    width: 100%s;
 }
 .nav-bar ul{
 	list-style:none;
@@ -118,12 +125,12 @@ html{
 .nav-bar li::after{
     content: "";
     position: absolute;
-    bottom: .1rem;
-    left: .1rem;
+    bottom: -.1rem;
+    left: 50%;
+    transform: translateX(-50%);
     height: .2rem;
     width: 0;
-    border-radius: 60%;
-    border-top: 1px solid var(--font-black);
+    border-top: 2px solid var(--font-black);
     transition: 300ms;
 }
 
@@ -133,7 +140,8 @@ html{
 @keyframes fadeLink{from{ opacity: 0;}to{opacity: 1;}}
 
 .active{
-    background-image: linear-gradient(to right,var(--font-black),#616161);
+    background-image: linear-gradient(to right,#333333,#969696,#333333);
+    background-size: 200%;
     color: white;
 }
 .home-container{
@@ -163,7 +171,7 @@ html{
     opacity: 0;
     animation-fill-mode: forwards;
     position: relative;
-    left: -20%;
+    left: -15%;
     height: fit-content;}   
 
 .get-started-container header h1{
@@ -171,13 +179,13 @@ html{
     position: relative;
     text-transform: uppercase;
     font-weight: 300;
-    font-size: 5rem;
+    font-size: 6rem;
     white-space: nowrap;
     overflow: hidden;
     letter-spacing: 10rem;
     animation: textslideTwo 2s;
     animation-fill-mode: forwards;
-    
+    color: var(--font-black);
 }
 
 .get-started-container header .p1{
@@ -186,11 +194,15 @@ html{
     overflow: hidden;
     animation: textslideOne 2s;
     animation-fill-mode: forwards;
+    color: #969696;
+    position: absolute;
+    top: -.8rem;
+    left: 0;
 
 }
 .get-started-container header .p2{
     font-size: 1rem;
-    opacity: .7;
+    color: #969696;
     white-space: nowrap;
     overflow: hidden;
     letter-spacing: .5rem;
@@ -203,7 +215,7 @@ html{
     display: block;
     width: 0;
     height: .3rem;
-    bottom: 2rem;
+    bottom: 1rem;
     left: .5rem;
     opacity: 0;
     animation: line 1500ms ease-out; 
@@ -215,7 +227,7 @@ html{
 @keyframes textslidecont{0%{opacity: .6;}100%{opacity: 1;}}
 @keyframes textslideTwo{0%{max-width:0ch;overflow: hidden; letter-spacing: 9rem;}100%{max-width: 15ch;letter-spacing: 0;}}
 @keyframes textslideOne{0%{max-width:0ch;overflow: hidden; letter-spacing: 9rem;  }100%{max-width: 14ch;letter-spacing: 0;}}
-@keyframes textslideThree{0%{max-width:0ch; overflow: hidden; letter-spacing: 9rem;  }100%{max-width: 54ch;letter-spacing: 0;}}
+@keyframes textslideThree{0%{max-width:0ch; overflow: hidden; letter-spacing: 9rem;  }100%{max-width: 54ch;letter-spacing: .1rem;}}
 @keyframes line{0%{ opacity: 1;width: 1%;}50%{width: 70%; }100%{opacity: 1;width: 40%;}}
 
 .start-btn{
@@ -244,7 +256,7 @@ html{
     font-weight: bold;
     position: absolute;
     top: 50%;
-    right: 0;
+    right: .2rem;
     transform: translate(20%,-50%);
     animation: button 1s ease-in;
     animation-iteration-count: infinite;
@@ -291,11 +303,12 @@ html{
 }
 #tabContainer .contact{
     display: none;
-    width: 100%; 
+    max-width: 100vw; 
     box-sizing: border-box;
     position: relative;
     animation: toRight 700ms ease-out;
     animation-fill-mode: forwards;
+    
 }
 #tabContainer .ideas-section{
     width: 100%;
@@ -321,6 +334,7 @@ html{
     position: relative;
     text-align: center;
     padding: 2rem 0;
+    box-sizing: border-box;
 }
 .suggest-cont div{
     margin: .5rem;
@@ -328,9 +342,14 @@ html{
 .suggest-cont p{
     max-width: 25rem;
     text-align: left;
+    letter-spacing: 1px;
     margin: 0 auto;
     padding: 1rem;
     opacity: .8;
+}
+.suggest-cont h3{
+    letter-spacing: .2rem;
+    text-transform: uppercase;
 }
 .stars-cont i{
     font-size: 2rem;
@@ -343,7 +362,7 @@ html{
 
 .suggest-cont form{
     text-align: center;
-    width: 100%;
+    width: 100%;    
     box-sizing: border-box;
     display: inline-block;
     padding: 1rem 0;
@@ -382,6 +401,8 @@ html{
 
 .social-btn{
     display: inline-block;
+    box-sizing: border-box;
+   
 }
 .social-cont h4{
     text-align:center;
@@ -450,6 +471,7 @@ html{
     text-transform: uppercase;
     position: relative;
     margin-bottom: 1rem;
+    letter-spacing: .2rem;
     color: var(--font-black);
    
 }
@@ -457,6 +479,7 @@ html{
     position: relative;
     color: rgb(141, 137, 137);
     padding-bottom: 1rem;
+    letter-spacing: 1px;
     border-bottom: 2px solid rgb(141, 137, 137);
 }
 /*IDEAS CONTAINER*/
@@ -467,12 +490,14 @@ html{
     padding-right:1rem;
     padding-top: 1rem;
     position: relative;
+    letter-spacing: .1rem;
 }
 .ideas-section > p{
     padding-top: .7rem;
     padding-left: 2rem;
     padding-right:2rem;
     opacity:.8;
+    letter-spacing: 1px;
     position: relative;
 }
 .ideas-container{
@@ -553,23 +578,24 @@ figure:hover .ribbon-in-figure::after{
     cursor: pointer;
     outline: none;
 }
-.close:hover{
-    text-shadow: 1px 1px 2px black;
-}
+.close:hover{text-shadow: 1px 1px 2px black;}
+
 .gallery-section{
     background-color: rgba(0,0,0,0.6);
     position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
     width:100vw;
     min-width:100%;
     height: 100vh;
     z-index: 3;
     display: none;
-    box-sizing: border-box;
+    box-sizing: border-box;}
+@keyframes fromBottom{
+    from{transform: scale(.5);top:80%;}
+    to{transform: scale(1);top:0;}}
+@keyframes fromTop{
+    from{transform: scale(1);top:0;}
+    to{transform: scale(0);top:100%;}}
 
-}
 .gallery-section .gallery-container{
     height: 80vh;
     width: 80vw;
@@ -582,22 +608,21 @@ figure:hover .ribbon-in-figure::after{
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
-}
+    z-index: 1;}
+
 .gallery-small-cont{
     width: 28rem;
     height: 90%;  
     position: relative;
     overflow: hidden;
     box-sizing: border-box;
-    margin-top: 2rem;
-}
+    margin-top: 2rem;}
+
 .gallery-small-cont .general{
     height: 85%;
     max-width: 100%;
     position: relative;
-    box-sizing: border-box;
-}
+    box-sizing: border-box;}
 
 .gallery-small-cont .general .main-box{
     max-width: 100%;
@@ -607,8 +632,7 @@ figure:hover .ribbon-in-figure::after{
     position: absolute;
     top: 0;
     left: 0;
-    box-sizing: border-box;
-}
+    box-sizing: border-box;}
 
 #mainOne{
    
@@ -635,8 +659,7 @@ figure:hover .ribbon-in-figure::after{
     position: absolute;
     bottom: 0;
     padding: .5rem 0;
-    background-color:rgba(255, 255, 255, 0.6);
-}
+    background-color:rgba(255, 255, 255, 0.6);}
 
 /*Small Interior*/
 
@@ -647,32 +670,29 @@ figure:hover .ribbon-in-figure::after{
     margin: 1rem auto;
     justify-content: space-evenly;
     align-items: center;
-    
 }
 .btn-container a{
     font-size: 2rem;
     font-weight: bold;
     text-decoration: none;
     color: gray;
-    outline: none;
-}
+    outline: none;}
+
 .btn-container a:hover{
-    text-shadow: 1px 1px 2px black;
-}
+    text-shadow: 1px 1px 2px black;}
+
 .btn-container p{
     font-weight: bold;
-    color:var(--font-black);
-}
+    color:var(--font-black);}
+
 figure a img{
 width: 100%;
 height: 100%;
 border-top-right-radius: 20px;
+cursor: pointer;}
 
-cursor: pointer;
-}
 figure a img:hover{
-    box-shadow: 1px 1px 5px rgb(31, 31, 31);
-}
+    box-shadow: 1px 1px 5px rgb(31, 31, 31);}
 
 /*Button animation*/
 @keyframes button{
@@ -681,7 +701,9 @@ figure a img:hover{
 /*RESPONSIVENESS*/
 @media screen and (max-width: 1200px){
 /*Header*/
-
+.get-started-container .start-header{
+    left: -10%;
+}
 }
 
 @media screen and (max-width: 1024px){
@@ -735,7 +757,11 @@ figure:hover .ribbon-in-figure::after{
 
 .ideas-container > figure{    
     margin: 0 auto;  
- }
+ }/*GET STARTED*/
+
+ .get-started-container .start-header{
+    left: -2%;
+    }
 }
 @media screen and (max-width: 700px){
 
@@ -911,13 +937,17 @@ figure:hover .ribbon-in-figure::after{animation:none;}
 .nav-bar li{
     margin: 0;
 }
+.nav-bar ul{
+    text-align: right;
+}
 .nav-bar ul li a{
     padding: .1rem .2rem;          
 }
 /*IDEAS*/
 .ideas-container{    
-      padding: 0;
+      padding:0 0 3rem 0;
       box-sizing: border-box;
+      
 }
 .ideas-container > figure{  
     width: 90%;
