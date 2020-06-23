@@ -8,6 +8,7 @@ function homePop(){
     body.style.overflow = "visible";
     var welcome = document.querySelector("header");
     welcome.style.display = "none";
+    homestyle.style.overflow="hidden";
     pop();
 }
     setTimeout(homePop, 6000);	
