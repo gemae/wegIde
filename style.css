@@ -861,9 +861,9 @@ figure:hover .ribbon-in-figure::after{
 
 /*ANIMATION*/
 @keyframes textslidecont{0%{opacity: .6;}100%{opacity: 1;}}
-@keyframes textslideTwo{0%{max-width:0ch;overflow: hidden; letter-spacing: 6rem;}100%{max-width: 15ch;letter-spacing: 0;}}
-@keyframes textslideOne{0%{max-width:0ch;overflow: hidden; letter-spacing: 6rem;}100%{max-width: 14ch;letter-spacing: 0;}}
-@keyframes textslideThree{0%{max-width:0ch; overflow: hidden; letter-spacing: 6rem;}100%{max-width: 54ch;letter-spacing: 0;}}
+@keyframes textslideTwo{0%{max-width:0ch;overflow: hidden;letter-spacing: 6rem;}100%{max-width: 15ch;letter-spacing: 0;}}
+@keyframes textslideOne{0%{max-width:0ch;overflow: hidden;letter-spacing: 6rem;}100%{max-width: 14ch;letter-spacing: 0;}}
+@keyframes textslideThree{0%{max-width:0ch; overflow: hidden;letter-spacing: 6rem;}100%{max-width: 54ch;letter-spacing: 0;}}
 @keyframes line{0%{ opacity: 1;width: 1%;}50%{width: 70%; }100%{opacity: 1;width: 40%;}}
 
 /*ABOUT*/
