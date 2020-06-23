@@ -55,7 +55,7 @@ html{
 }
 .text2{
 	color: transparent;
-	font-size: 1.8rem;
+	font-size: 2rem;
 	transition: 1s;
     position: absolute;
     letter-spacing: 1.5px;
@@ -370,7 +370,6 @@ html{
 .suggest-cont textarea{
     padding: .5rem;
     box-sizing: border-box;
-    text-align: left;
     border: none;
     outline: none;
     overflow: hidden;
@@ -729,7 +728,27 @@ figure:hover .ribbon-in-figure::after{
     width: 30rem; 
 }
 }
+@media screen and (max-width: 910px){
 
+/*GET STARTED*/
+.get-started-container header h1{
+    font-size: 4rem;
+}
+.get-started-container header h1::after{
+    height: .1rem;
+}
+.get-started-container header .p1{
+    font-size: 1.3rem;
+}
+.get-started-container header .p2{
+    font-size: 1rem;
+    
+}
+.get-started-container .start-header{
+    left: 0%;
+}
+
+}
 @media screen and (max-width: 800px){
 /*TABS*/
 #tabContainer section{
@@ -758,10 +777,8 @@ figure:hover .ribbon-in-figure::after{
 .ideas-container > figure{    
     margin: 0 auto;  
  }/*GET STARTED*/
+ 
 
- .get-started-container .start-header{
-    left: -2%;
-    }
 }
 @media screen and (max-width: 700px){
 
@@ -787,7 +804,9 @@ figure:hover .ribbon-in-figure::after{
     transition: .2s;
 }
 .get-started-container header h1::after{
-    height: .2rem;
+    
+    bottom: .5rem;
+    
 }
 .get-started-container header .p1{
     font-size: 1.2rem;
@@ -819,29 +838,34 @@ figure:hover .ribbon-in-figure::after{
 .contact .suggest-cont p{
     text-align: center;
 }
-/*START HEADER*/
 
+/*START HEADER*/
 .get-started-container header h1{
-    font-size: 3.5rem;
+    font-size: 2rem;
     transition: .2s;
 }
 .get-started-container header h1::after{
-    height: .1rem;
+    height: .2rem;
+    bottom: 0rem;
 }
+
 .get-started-container header .p1{
-    font-size: 1rem;
+    font-size: .8rem;
     transition: .2s;
 }
 .get-started-container header .p2{
-    font-size: .7rem;
+    font-size: .6rem;
     transition: .2s;
 }
+/*START HEADER*/
+
+
 
 /*ANIMATION*/
 @keyframes textslidecont{0%{opacity: .6;}100%{opacity: 1;}}
-@keyframes textslideTwo{0%{max-width:0ch;overflow: hidden; letter-spacing: 9rem;}100%{max-width: 15ch;letter-spacing: 0;}}
-@keyframes textslideOne{0%{max-width:0ch;overflow: hidden; letter-spacing: 9rem;  }100%{max-width: 14ch;letter-spacing: 0;}}
-@keyframes textslideThree{0%{max-width:0ch; overflow: hidden; letter-spacing: 9rem;  }100%{max-width: 54ch;letter-spacing: 0;}}
+@keyframes textslideTwo{0%{max-width:0ch;overflow: hidden; letter-spacing: 6rem;}100%{max-width: 15ch;letter-spacing: 0;}}
+@keyframes textslideOne{0%{max-width:0ch;overflow: hidden; letter-spacing: 6rem;  }100%{max-width: 14ch;letter-spacing: 0;}}
+@keyframes textslideThree{0%{max-width:0ch; overflow: hidden; letter-spacing: 6rem;  }100%{max-width: 54ch;letter-spacing: 0;}}
 @keyframes line{0%{ opacity: 1;width: 1%;}50%{width: 70%; }100%{opacity: 1;width: 40%;}}
 
 /*ABOUT*/
@@ -850,9 +874,7 @@ figure:hover .ribbon-in-figure::after{
     padding: 3rem 1rem;
     width: 90%;
 }
-.get-started-container .start-header{
-    left: 0%;
-}
+
 figure:hover .ribbon-in-figure::after{
     animation:none;
 }
@@ -877,8 +899,9 @@ figure:hover .ribbon-in-figure::after{
 @media screen and (max-width: 450px){
 
 /*WELCOME HEADER*/
-@keyframes text{10%{letter-spacing: 1rem;transform: scale(1.1);}20%{letter-spacing: 1.1rem;}30%{letter-spacing: 1.2rem;}50%{letter-spacing: 1.3rem;}100%{letter-spacing:.8rem;}}
-   
+@keyframes text{10%{letter-spacing: .8rem;}20%{letter-spacing: .9rem;}30%{letter-spacing: 1rem;}50%{letter-spacing: 1.1rem;}100%{letter-spacing:.8rem;}}
+
+
 figure:hover .ribbon-in-figure::after{animation:none;}
 
 /*GALLERY*/
@@ -900,29 +923,11 @@ figure:hover .ribbon-in-figure::after{animation:none;}
 
 .gallery-small-cont{width:85%;}
 
-/*START HEADER*/
-.get-started-container header h1{
-    font-size: 2rem;
-    transition: .2s;
-}
-.get-started-container header h1::after{
-    height: .2rem;
-    bottom: .7rem;
-}
-
-.get-started-container header .p1{
-    font-size: .8rem;
-    transition: .2s;
-}
-.get-started-container header .p2{
-    font-size: .6rem;
-    transition: .2s;
-}
 /*CONTACT*/
 
 .social-btn a{
   
-    border-radius: 35%;
+    border-radius: 40%;
     padding: 0 1rem;
 }
 /*SUGGEST/SOCIAL BUTTON*/
